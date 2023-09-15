@@ -1,8 +1,44 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>welcome</title>
-  </head>
-  <body>
-    site done
-  </body>
+<head>
+  <title>Sorry!!</title>
+  <style>
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+    <h2>The page you are looking for is temporarily unavailable. Please check the link and try again later!</h2>
+
+  <script>
+    const currentURL = window.location.href;
+    const url = new URL(currentURL);
+    const blogIdParam1 = url.searchParams.get('proj');
+    const blogIdParam2 = url.searchParams.get('PROJ');
+    
+    
+    if (blogIdParam1 !== null || blogIdParam2 !== null) {
+      let temp = "empty";
+
+      if(blogIdParam1 !== null){
+        temp = blogIdParam1.trim();
+      }else if(blogIdParam2 !== null){
+        temp = blogIdParam2.trim();
+      }
+      
+      const pro = temp.toLowerCase();
+      
+      if(pro === 'intern_pro'){
+        window.location.href = "https://github.com/amansingh331/Portfolio-template-in-php-mysql/tree/main/login/project1";
+      }
+    }
+  </script>
+</body>
 </html>
